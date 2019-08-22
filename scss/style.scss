@@ -1,0 +1,259 @@
+@import 'normalize.scss';
+
+// === Mixins ===
+// @mixin font-lato {
+//   font-family: 'Lato', sans-serif;
+// }
+// === Mixins ===
+
+// === Variables ===
+$color-text: #777;
+// === / Variables ===
+
+// == Common ===
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.section-outer {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.section-inner {
+  max-width: 930px;
+  margin: 0 auto;
+}
+
+.text {
+  text-align: center;
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    color: $color-text;
+  }
+}
+
+.section-header {
+  position: relative;
+  color: #fff;
+  background: url('../img/first-bg.jpg') no-repeat 50% 50%;
+  background-size: cover;
+
+  .section-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  &-menu {
+    display: flex;
+    justify-content: space-between;
+
+    &__logo,
+    &__nav {
+      padding: 0;
+      margin: 40px 0;
+    }
+
+    &__nav {
+      position: relative;
+      display: flex;
+      margin-top: 45px;
+      font-size: 14px;
+      text-transform: uppercase;
+      list-style: none;
+
+      li {
+        & + li {
+          margin-left: 40px;
+        }
+
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  &-wrapper {
+    margin: 0 auto;
+    text-align: center;
+
+    &__subtitle {
+      font-size: 40px;
+      text-transform: uppercase;
+    }
+
+    &__title {
+      font-size: 75px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &__button {
+      margin-top: 40px;
+      margin-right: auto;
+      margin-left: auto;
+
+      a {
+        width: 240px;
+        padding: 20px 40px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #484543;
+        text-decoration: none;
+        text-transform: uppercase;
+        background: #fed136;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+.section-services {
+  margin-top: 120px;
+  margin-bottom: 120px;
+
+  &-part1 {
+    &__content {
+      text-align: center;
+
+      .title {
+        font-size: 40px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .text {
+        margin-top: 5px;
+        font-size: 16px;
+        color: $color-text;
+      }
+    }
+  }
+
+  &-part2 {
+    margin-top: 80px;
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+
+      .item {
+        width: 270px;
+        padding: 0 5px;
+
+        &__title {
+          margin-top: 15px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        &__text {
+          margin-top: 15px;
+          font-size: 14px;
+          line-height: 21px;
+          color: $color-text;
+        }
+      }
+    }
+  }
+}
+
+.section-portfolio {
+  padding-top: 115px;
+  padding-bottom: 120px;
+  background: #f7f7f7;
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+  }
+}
+
+.section-about {
+  padding: 115px 0 80px;
+
+  .list {
+    padding-top: 20px;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+
+      .content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 183px;
+
+        &-info {
+          position: absolute;
+          width: 350px;
+
+          &__title {
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          &__text {
+            line-height: 21px;
+          }
+        }
+      }
+
+      $margin: 10px;
+
+      &:nth-child(even) {
+        .content {
+          &-info {
+            left: 100%;
+            margin-left: $margin;
+          }
+        }
+      }
+
+      &:nth-child(odd) {
+        .content {
+          &-info {
+            right: 100%;
+            margin-right: $margin;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 118px;
+  background: #f7f7f7;
+}
